@@ -58,15 +58,14 @@
       background-color: #2f3e51;
       height: calc(100vh - 100px);
       width:100%;
+      padding: 40px 20px 20px 20px;
 
-        &__group{
-        padding: 40px 20px 20px 20px;
-        text-decoration: none;
+        .group{
         color: white;
-
-        .group_name{
+        text-decoration: none;
+          .name{
           }
-          .group_alert{
+          .alert{
             padding: 5px 0px 0px 0px;
             font-size: 11px;
           }
