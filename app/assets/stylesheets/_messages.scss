@@ -121,7 +121,7 @@
       border-top: 1px solid #eeeeee;
       padding: 35px 40px;
 
-      &__content_user{
+      &__user{
         display: flex;
         .user_name{
           font-size: 16px;
@@ -133,7 +133,7 @@
           padding: 0px 5px;
         }
       }
-      &__comment_top{
+      &__comment{
         padding: 12px 0px 46px 0px;
         .comment{
           font-size: 14px;
@@ -151,7 +151,7 @@
       padding: 20px 40px;
       height: 90px;
 
-      &__main_form{
+      &__main-form{
         width: 95%;
         display: flex;
 
@@ -175,7 +175,7 @@
           }
         
       }
-      &__send_top{
+      &__send-top{
          .send{
           font-size: 20px;
           background-color: #38aef0;
