@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
 
-  .sidebar{
+  .side-bar{
   width: 300px;
   height: 100vh;
   
@@ -79,7 +79,7 @@
   width: calc(100vw - 300px);
   height: 100vh;
 
-    .header{
+    .main-header{
       background-color: #ffffff;
       height: 100px;
       display: flex;
@@ -115,7 +115,7 @@
        }
 
     }
-    .main_content{
+    .main-content{
       background-color: #fafafa;
       height: calc(100vh - 190px);
       border-top: 1px solid #eeeeee;
@@ -145,7 +145,7 @@
 
     }
 
-    .main_footer{
+    .main-footer{
       background-color: #d2d2d2;
       display: flex;
       padding: 20px 40px;
