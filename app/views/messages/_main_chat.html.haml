@@ -1,30 +1,30 @@
-.main_chat
+.mainchat
   .header
-    .top
+    .header__top
       .title
         test
       .members
         69
-    .edit_top
+    .header__edittop
       = link_to "#",class: "edit" do
         %p.edit
           Edit
         
   .main_content
-    .content_user
+    .main_content__content_user
       .p.user_name
         masa
       .p.date
         2020/1/4 10:00
-    .comment_top
+    .main_content__comment_top
       .p.comment
         こんにちは
 
   .main_footer
-    .main_form
-      %input.form{name: "massage", placeholder: " type a massage"}
+    .main_footer__main_form
+      %input.form{name:"massage", placeholder: " type a massage"}
       %label.icons{class: "icons"}
         %i.far.fa-image
           %input{type: "file",class: "g"}
-    .send_top
+    .main_footer__send_top
       %input{type: "submit", class: "send", value: "Send"}
