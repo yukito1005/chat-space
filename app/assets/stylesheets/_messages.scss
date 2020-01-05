@@ -89,17 +89,17 @@
       &__top{
         padding-left: 30px;
          
-        .title{
+        &__title{
           font-size: 20px;
          }
-         .members{
+        &__members{
           padding: 15px 0px 0px 0px;
           color: #999999;
           font-size: 11px;
          
          }
        }
-        &__edittop{
+        &__edit{
           height: 40px;
           line-height: 40px;
           padding: 0 20px;
