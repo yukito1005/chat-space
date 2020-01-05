@@ -1,0 +1,31 @@
+.main_chat
+  .header
+    .top
+      .title
+        test
+      .members
+        69
+    .edit_top
+      = link_to "#",class: "edit" do
+        %p.edit
+          Edit
+        
+  .main_content
+    .content_user
+      .p.user_name
+        masa
+      .p.date
+        2020/1/4 10:00
+    .comment_top
+      .p.comment
+        こんにちは
+
+  .main_footer
+    .main_form
+      %input.form{:name => "massage", :placeholder=>" type a massage"}
+      %label.icons{class: "icons"}
+        %i.far.fa-image
+          %input{type: "file",class: "g"}
+    .send_top
+      -# %p.send
+      %input{type: "submit", class: "send", value: "Send"}
