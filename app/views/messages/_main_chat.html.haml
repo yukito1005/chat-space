@@ -1,0 +1,25 @@
+.mainchat
+  .main-header
+    .main-header__top
+      .main-header__top__title
+        = @group.name
+      .main-header__top__members
+        Member:
+        - @group.users.each do |user|
+          = user.name
+    .main-header__edit
+      = link_to edit_group_path(@group),class: "edit" do
+        %p.edit
+          Edit
+        
+  .main-content
+    =render @messages
+  
+  .main-footer
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'main-footer_form', placeholder: 'type a message'
+      .main-footer__send-top
+        = f.label :image, class: '' do
+          = icon('fa-image', 'image', class: 'icons')
+          = f.file_field :image, class: 'main-footer__main-form__icons '
+      = f.submit 'Send', class: 'main-footer__send-top'

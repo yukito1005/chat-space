@@ -1,0 +1,21 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header__user 
+      .name
+        = current_user.name
+      %ul.icon
+        %li.list
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon_fa-edit'
+        %li.list
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon_fa-cog'
+  
+  .side-bar__content
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group),class:"group-link" do
+          .side-bar__content--name
+            = group.name
+          .side-bar__content--alart
+            = group.show_last_message
