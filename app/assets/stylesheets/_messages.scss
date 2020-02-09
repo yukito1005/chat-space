@@ -19,12 +19,13 @@
      align-items: center;
      padding: 0px 20px;
      color: white;
-
+     
       &__user{
         width: 100%;
         height: 20px;
         justify-content: space-between;
         display: flex;
+        text-decoration: none;
 
         .name{
           text-align: left;
@@ -35,16 +36,22 @@
           width: 60px;
           float: right;
           display: flex;
-          
+          list-style: none;
+          color: white;
+
           .icon_fa-edit{ 
             margin: 0px 0px 0px 20px;
+            color: white;
+
             .fa-edit:before {
-              content: "";
-              color: white;
+              content: "white";
+              
+
             }
           } 
           .icon_fa-cog{
             margin: 0px 0px 0px 5px;
+            color: white;
             .fa-cog:before {
               content: "";
               color: white;
@@ -61,15 +68,19 @@
       padding: 40px 20px 20px 20px;
 
         .group{
-        color: white;
-        text-decoration: none;
-          .name{
+
+          .group-link{
+            text-decoration: none;
+            color: white;
           }
-          .alert{
+
+
+          .group__message{
             padding: 5px 0px 0px 0px;
             font-size: 11px;
           }
-        }
+        
+      }
     }
   }
 
@@ -146,27 +157,23 @@
     }
 
     .main-footer{
-      background-color: #d2d2d2;
-      display: flex;
-      padding: 20px 40px;
+      background-color: #d2d2dd;
+      padding:20px 40px;
       height: 90px;
-
-      &__main-form{
+      
+      &__form{
         width: 95%;
         display: flex;
-
-       .form{
         position: relative;
-        width: 95%;
-      
-        }
+        padding: 20px 40px;
+
         .icons{
           float: left;
           font-size: 30px;
           position: absolute;
           cursor: pointer;
-          top: 760px;
-          right: 170px;
+          top: 9px;
+          right: 70px;
           
           .g{
             display: none;
@@ -176,16 +183,12 @@
         
       }
       &__send-top{
-         .send{
           font-size: 20px;
           background-color: #38aef0;
           color: white;
           padding: 13px 20px;
           cursor: pointer;
-
-        }
       }   
     
-
     }
   }
