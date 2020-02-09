@@ -17,9 +17,9 @@
   
   .main-footer
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'main-footer_form', placeholder: 'type a message'
-      .main-footer__send-top
-        = f.label :image, class: '' do
-          = icon('fa-image', 'image', class: 'icons')
-          = f.file_field :image, class: 'main-footer__main-form__icons '
-      = f.submit 'Send', class: 'main-footer__send-top'
+      .input-box
+        = f.text_field :content, class: 'main-footer__form', placeholder: 'type a message'
+        = f.submit 'Send', class: 'send-top'
+        = f.label :image, class: 'icons' do
+          = icon('fa','image')
+          = f.file_field :image, class: 'file'
