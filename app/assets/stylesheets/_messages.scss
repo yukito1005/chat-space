@@ -131,6 +131,7 @@
       height: calc(100vh - 190px);
       border-top: 1px solid #eeeeee;
       padding: 35px 40px;
+      overflow: scroll;
 
       &__user{
         display: flex;
@@ -161,34 +162,40 @@
       padding:20px 40px;
       height: 90px;
       
-      &__form{
-        width: 95%;
-        display: flex;
-        position: relative;
-        padding: 20px 40px;
+     
+        &__form{
+          width: 95%;
+          height: 50px;
+        }
+       
+        .input-box{
+            display: flex;
+            position: relative;
 
-        .icons{
-          float: left;
-          font-size: 30px;
-          position: absolute;
-          cursor: pointer;
-          top: 9px;
-          right: 70px;
-          
-          .g{
-            display: none;
+            .icons{
+            float: left;
+            font-size: 30px;
+            position: absolute;
+            cursor: pointer;
+            top: 9px;
+            right: 120px;
             }
 
-          }
-        
-      }
-      &__send-top{
-          font-size: 20px;
-          background-color: #38aef0;
-          color: white;
-          padding: 13px 20px;
-          cursor: pointer;
-      }   
-    
+            .file{
+              top: 9px;
+            right: 70px;
+            display: none;
+
+            }
+
+         .send-top{
+            font-size: 20px;
+            background-color: #38aef0;
+            color: white;
+            padding: 13px 20px;
+            cursor: pointer;
+            margin: 0 0 0 20px;
+        }   
+       }
     }
   }
