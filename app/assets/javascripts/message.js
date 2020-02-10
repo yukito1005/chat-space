@@ -56,7 +56,7 @@ $('#new_message').on('submit', function(e){
     $('.main-content').append(html);      
     $('form')[0].reset();
     $('.main-content').animate({ scrollTop: $('.main-content')[0].scrollHeight});
-    $('.main-footer__send-top').prop('disabled',false);
+    $('.send-top').prop('disabled',false);
   })
 
 
