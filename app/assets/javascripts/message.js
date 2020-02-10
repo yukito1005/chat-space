@@ -58,10 +58,10 @@ $('#new_message').on('submit', function(e){
     $('.main-content').animate({ scrollTop: $('.main-content')[0].scrollHeight});
     $('.send-top').prop('disabled',false);
   })
-
+  .fail(function() {
+    alert("メッセージ送信に失敗しました");
+  });
 
 })
-.fail(function() {
-  alert("メッセージ送信に失敗しました");
 });
-});
+
