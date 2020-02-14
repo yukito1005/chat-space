@@ -1,6 +1,3 @@
-$(function(){
-  last_message_id = $('.message:last').data("message-id");
-  console.log(last_message_id);
 
   function buildHTML(message){
    if ( message.image ) {
@@ -107,12 +104,5 @@ $('#new_message').on('submit', function(e){
       insertHTML += buildHTML(message)
     });
     //メッセージが入ったHTMLに、入れ物ごと追加
-    $('.messages').append(insertHTML);
-  })
-  .fail(function() {
-    console.log('error');
-  });
-  setInterval(reloadMessages, 7000);
-};
 
-})
+}
