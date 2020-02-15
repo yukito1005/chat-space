@@ -1,6 +1,5 @@
 $(function(){
   last_message_id = $('.message:last').data("message-id");
-  (last_message_id);
 
   function buildHTML(message){
    if ( message.image ) {
@@ -110,7 +109,6 @@ $('#new_message').on('submit', function(e){
     $('.messages').append(insertHTML);
   })
   .fail(function() {
-    ('error');
   });
   setInterval(reloadMessages, 7000);
 };
