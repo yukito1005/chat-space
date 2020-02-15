@@ -1,3 +1,6 @@
+$(function(){
+  last_message_id = $('.message:last').data("message-id");
+  (last_message_id);
 
   function buildHTML(message){
    if ( message.image ) {
@@ -39,7 +42,7 @@
       </div>`
     } else if (message.image) {
       //同様に、data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id= + message.id + > 
+      var html = `<div class="message" data-message-id=` + message.id + > 
         <div class="upper-message"> 
           <div class="upper-message__user-name">
             message.user_name 
@@ -51,7 +54,7 @@
         <div class="lower-message"> 
           <img src=" + message.image + " class="lower-message__image" > 
         </div> 
-      </div>`
+      </div>``
     };
     return html;
   };
@@ -104,5 +107,12 @@ $('#new_message').on('submit', function(e){
       insertHTML += buildHTML(message)
     });
     //メッセージが入ったHTMLに、入れ物ごと追加
+    $('.messages').append(insertHTML);
+  })
+  .fail(function() {
+    ('error');
+  });
+  setInterval(reloadMessages, 7000);
+};
 
-}
+})
