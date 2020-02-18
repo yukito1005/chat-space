@@ -1,51 +1,52 @@
 $(function(){
+  
   last_message_id = $('.message:last').data("message-id");
 
   function buildHTML(message){
     if (message.content && message.image) {
       //data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id= + message.id + > 
-        <div class="upper-message"> 
-          <div class="upper-message__user-name"> 
-            message.user_name 
-          </div> 
-          <div class="upper-message__date"> 
-            message.created_at 
-          </div> 
-        </div> 
-        <div class="lower-message"> 
-          <p class="lower-message__content"> 
-            message.content
-          </p>
-          <img src=" + message.image + " class="lower-message__image" > 
+      var html = `<div class="message" data-message-id=${message.id}>
+      <div class="upper-message">
+        <div class="user-name">
+          ${message.user_name}
         </div>
-      </div>`
+        <div class="date">
+          ${message.date}
+        </div>
+      </div>
+      <div class="lower-message">
+        <p class="lower-message__content">
+          ${message.content}
+        </p>
+      </div>
+      <img src=${message.image} >
+    </div>`
     } else if (message.content) {
       //同様に、data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id= + message.id + > +
+      var html = `<div class="message" data-message-id=  ${message.id} > 
         <div class="upper-message"> 
           <div class="upper-message__user-name">
-            message.user_name 
+            ${message.user_name}
           </div> 
            <div class="upper-message__date"> 
-            message.created_at 
+            ${message.created_at }
           </div> 
         </div> 
         <div class="lower-message"> 
           <p class="lower-message__content"> 
-            message.content 
+            ${message.content}
           </p> 
         </div> 
       </div>`
     } else if (message.image) {
       //同様に、data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id= + message.id + > 
+      var html = `<div class="message" data-message-id= ${message.id} > 
         <div class="upper-message"> 
           <div class="upper-message__user-name">
-            message.user_name 
+            ${message.user_name}
           </div>
           <div class="upper-message__date"> 
-            message.created_at 
+            ${message.created_at }
           </div> 
         </div> 
         <div class="lower-message"> 
@@ -58,17 +59,17 @@ $(function(){
 
 
 $('#new_message').on('submit', function(e){
- e.preventDefault();
- var formData = new FormData(this);
- var url = $(this).attr('action')
- $.ajax({
-   url: url,
-   type: "POST",
-   data: formData,
-   dataType: 'json',
-   processData: false,
-   contentType: false
- })
+  e.preventDefault();
+  var formData = new FormData(this);
+  var url = $(this).attr('action')
+  $.ajax({
+    url: url,
+    type: "POST",
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
+  })
 
   .done(function(data){
     var html = buildHTML(data);
@@ -84,6 +85,7 @@ $('#new_message').on('submit', function(e){
  })
 
  var reloadMessages = function() {
+
   //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
   last_message_id = $('.message:last').data("message-id");
   $.ajax({
@@ -96,20 +98,23 @@ $('#new_message').on('submit', function(e){
     data: {id: last_message_id}
   })
   .done(function(messages) {
+    console.log(messages)
     if (messages.length !== 0) {
-    //追加するHTMLの入れ物を作る
-    var insertHTML = '';
-    //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-    $.each(messages, function(i, message) {
-      insertHTML += buildHTML(message)
-    });
-    //メッセージが入ったHTMLに、入れ物ごと追加
-    $('.messages').append(insertHTML);
+      //追加するHTMLの入れ物を作る
+      var insertHTML = '';
+      //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      //メッセージが入ったHTMLに、入れ物ごと追加
+      $('.messages').append(insertHTML);
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
   }
   })
   .fail(function() {
   });
-  setInterval(reloadMessages, 7000);
+  
+  
 };
-
+setInterval(reloadMessages, 5000);
 })
