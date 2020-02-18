@@ -105,7 +105,7 @@ $('#new_message').on('submit', function(e){
     });
     //メッセージが入ったHTMLに、入れ物ごと追加
     $('.messages').append(insertHTML);
-   }
+  }
   })
   .fail(function() {
   });
