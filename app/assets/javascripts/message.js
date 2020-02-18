@@ -2,8 +2,6 @@ $(function(){
   last_message_id = $('.message:last').data("message-id");
 
   function buildHTML(message){
-   if ( message.image ) {
-     var buildHTML = function(message) {
     if (message.content && message.image) {
       //data-idが反映されるようにしている
       var html = `<div class="message" data-message-id= + message.id + > 
@@ -41,7 +39,7 @@ $(function(){
       </div>`
     } else if (message.image) {
       //同様に、data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id=` + message.id + > 
+      var html = `<div class="message" data-message-id= + message.id + > 
         <div class="upper-message"> 
           <div class="upper-message__user-name">
             message.user_name 
@@ -53,11 +51,11 @@ $(function(){
         <div class="lower-message"> 
           <img src=" + message.image + " class="lower-message__image" > 
         </div> 
-      </div>``
+      </div>`
     };
     return html;
   };
- }
+
 
 $('#new_message').on('submit', function(e){
  e.preventDefault();
@@ -107,6 +105,7 @@ $('#new_message').on('submit', function(e){
     });
     //メッセージが入ったHTMLに、入れ物ごと追加
     $('.messages').append(insertHTML);
+   }
   })
   .fail(function() {
   });
