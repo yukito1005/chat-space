@@ -13,13 +13,14 @@ class UsersController < ApplicationController
   end
 
   def update
-  if current_user.update(user_params)
-    redirect_to root_path 
+    if current_user.update(user_params)
+      redirect_to root_path 
 
-  else
-    render :editf
+    else
+      render :editf
 
-  end 
+    end 
+  end
 
   private
 
@@ -27,5 +28,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 
-end
 end
