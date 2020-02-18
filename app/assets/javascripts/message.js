@@ -6,7 +6,7 @@ $(function(){
     if (message.content && message.image) {
       //data-idが反映されるようにしている
       var html = `<div class="message" data-message-id=${message.id}>
-      <div class="upper-message">
+      <div class="main-content__user">
         <div class="user-name">
           ${message.user_name}
         </div>
@@ -14,8 +14,8 @@ $(function(){
           ${message.date}
         </div>
       </div>
-      <div class="lower-message">
-        <p class="lower-message__content">
+      <div class="main-content__comment">
+        <p class="comment">
           ${message.content}
         </p>
       </div>
@@ -24,16 +24,16 @@ $(function(){
     } else if (message.content) {
       //同様に、data-idが反映されるようにしている
       var html = `<div class="message" data-message-id=  ${message.id} > 
-        <div class="upper-message"> 
+        <div class="main-content__user"> 
           <div class="upper-message__user-name">
             ${message.user_name}
           </div> 
-           <div class="upper-message__date"> 
+           <div class="date"> 
             ${message.created_at }
           </div> 
         </div> 
-        <div class="lower-message"> 
-          <p class="lower-message__content"> 
+        <div class="main-content__comment"> 
+          <p class="comment"> 
             ${message.content}
           </p> 
         </div> 
