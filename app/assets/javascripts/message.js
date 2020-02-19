@@ -41,17 +41,18 @@ $(function(){
     } else if (message.image) {
       //同様に、data-idが反映されるようにしている
       var html = `<div class="message" data-message-id= ${message.id} > 
-        <div class="upper-message"> 
+        <div class="main-content__user"> 
           <div class="upper-message__user-name">
             ${message.user_name}
           </div>
-          <div class="upper-message__date"> 
+          <div class="date"> 
             ${message.created_at }
           </div> 
         </div> 
-        <div class="lower-message"> 
-          <img src=" + message.image + " class="lower-message__image" > 
+        <div class="main-content__comment"> 
+          <img src=" + ${message.image} + " class="lower-message__image" > 
         </div> 
+        <img src=${message.image} >
       </div>`
     };
     return html;
@@ -98,7 +99,7 @@ $('#new_message').on('submit', function(e){
     data: {id: last_message_id}
   })
   .done(function(messages) {
-    
+   console.log(messages)
     if (messages.length !== 0) {
       //追加するHTMLの入れ物を作る
       var insertHTML = '';
@@ -107,8 +108,8 @@ $('#new_message').on('submit', function(e){
         insertHTML += buildHTML(message)
       });
       //メッセージが入ったHTMLに、入れ物ごと追加
-      $('.messages').append(insertHTML);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $('.main-content').append(insertHTML);
+      $('.main-content').animate({ scrollTop: $('.main-content')[0].scrollHeight});
   }
   })
   .fail(function() {
