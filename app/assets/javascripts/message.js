@@ -11,21 +11,21 @@ $(function(){
           ${message.user_name}
         </div>
         <div class="date">
-          ${message.date}
+          ${message.created_at}
         </div>
       </div>
       <div class="main-content__comment">
         <p class="comment">
           ${message.content}
         </p>
-      </div>
+      </div>cre
       <img src=${message.image} >
     </div>`
     } else if (message.content) {
       //同様に、data-idが反映されるようにしている
       var html = `<div class="message" data-message-id=  ${message.id} > 
         <div class="main-content__user"> 
-          <div class="upper-message__user-name">
+          <div class="user-name">
             ${message.user_name}
           </div> 
            <div class="date"> 
@@ -42,7 +42,7 @@ $(function(){
       //同様に、data-idが反映されるようにしている
       var html = `<div class="message" data-message-id= ${message.id} > 
         <div class="main-content__user"> 
-          <div class="upper-message__user-name">
+          <div class="user-name">
             ${message.user_name}
           </div>
           <div class="date"> 
@@ -50,9 +50,8 @@ $(function(){
           </div> 
         </div> 
         <div class="main-content__comment"> 
-          <img src=" + ${message.image} + " class="lower-message__image" > 
+          <img src= ${message.image} + " class="lower-message__image" > 
         </div> 
-        <img src=${message.image} >
       </div>`
     };
     return html;
