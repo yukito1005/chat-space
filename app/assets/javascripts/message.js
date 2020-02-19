@@ -86,10 +86,8 @@ $('#new_message').on('submit', function(e){
 
  var reloadMessages = function() {
 
-  //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
   last_message_id = $('.message:last').data("message-id");
   $.ajax({
-    //ルーティングで設定した通りのURLを指定
     url: "api/messages",
     //ルーティングで設定した通りhttpメソッドをgetに指定
     type: 'get',
