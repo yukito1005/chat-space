@@ -18,7 +18,7 @@ $(function(){
         <p class="comment">
           ${message.content}
         </p>
-      </div>cre
+      </div>
       <img src=${message.image} >
     </div>`
     } else if (message.content) {
